@@ -16,11 +16,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-
 //@WebServlet(urlPatterns={"/dthRequest"})
 public class NewDTHRequestServlet extends HttpServlet {
- 	
+	
 	private int reqCount = 1;
 	
 	public void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -28,27 +26,27 @@ public class NewDTHRequestServlet extends HttpServlet {
 		String name = null;
 		String connectionType = null;
 		String refNo = null;
-    
-    name = req.getParameter("name");
-    String contactNo = req.getParameter("contactNo");
-    String emailAddress = req.getParameter("emailAddress");
-    String city = req.getParameter("city");
-    String state = req.getParameter("state");
-    String pincode = req.getParameter("pincode");
-    
-    connectionType = req.getParameter("connectionType");
-    
-    refNo = String.valueOf(Calendar.getInstance().getTimeInMillis());
-    
-    req.setAttribute("name", name);
-    req.setAttribute("contactNo", contactNo);
-    req.setAttribute("emailAddress", emailAddress);
-    req.setAttribute("city", city);
-    req.setAttribute("state", state);
-    req.setAttribute("pincode", pincode);
-    req.setAttribute("connectionType", connectionType);
-    req.setAttribute("refNo", refNo);
-    
-    req.getRequestDispatcher("/request-details.jsp").forward(req, resp);        
-  }
+
+		name = req.getParameter("name");
+		String contactNo = req.getParameter("contactNo");
+		String emailAddress = req.getParameter("emailAddress");
+		String city = req.getParameter("city");
+		String state = req.getParameter("state");
+		String pincode = req.getParameter("pincode");
+
+		connectionType = req.getParameter("connectionType");
+
+		refNo = String.valueOf(Calendar.getInstance().getTimeInMillis());
+
+		req.setAttribute("name", name);
+		req.setAttribute("contactNo", contactNo);
+		req.setAttribute("emailAddress", emailAddress);
+		req.setAttribute("city", city);
+		req.setAttribute("state", state);
+		req.setAttribute("pincode", pincode);
+		req.setAttribute("connectionType", connectionType);
+		req.setAttribute("refNo", refNo);
+
+		req.getRequestDispatcher("/request-details.jsp").forward(req, resp);
+	}
 }

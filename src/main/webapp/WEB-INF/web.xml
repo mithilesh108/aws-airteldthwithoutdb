@@ -9,15 +9,36 @@
 		<servlet-name>servlet</servlet-name>
 		<servlet-class>com.airtelcare.servlet.NewDTHRequestServlet</servlet-class>
 	</servlet>
-	
+
+	<servlet>
+		<servlet-name>servleth</servlet-name>
+		<servlet-class>com.airtelcare.servlet.HealthServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>request</servlet-name>
+		<servlet-class>com.airtelcare.servlet.RequestServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>request</servlet-name>
+		<url-pattern>/request</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>servleth</servlet-name>
+		<url-pattern>/health</url-pattern>
+	</servlet-mapping>
+
 	<servlet-mapping>
 		<servlet-name>servlet</servlet-name>
 		<url-pattern>/dthRequest</url-pattern>
 	</servlet-mapping>
 
+
 	<welcome-file-list>
 		<welcome-file>request-new-connection.jsp</welcome-file>
 	</welcome-file-list>
+
+
 
 
 </web-app>
