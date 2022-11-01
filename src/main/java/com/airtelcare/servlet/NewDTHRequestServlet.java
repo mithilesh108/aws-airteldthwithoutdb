@@ -20,11 +20,14 @@ import javax.servlet.http.HttpServletResponse;
 
 //@WebServlet(urlPatterns={"/dthRequest"})
 public class NewDTHRequestServlet extends HttpServlet {
-  public void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	  System.out.println(LocalDateTime.now()+" NewDTHRequestServlet  service method : "+LocalDate.now());
-    String name = null;
-    String connectionType = null;
-    String refNo = null;
+ 	
+	private int reqCount = 1;
+	
+	public void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println(LocalDate.now() + " NewDTHRequestServlet  service method : " + reqCount++);
+		String name = null;
+		String connectionType = null;
+		String refNo = null;
     
     name = req.getParameter("name");
     String contactNo = req.getParameter("contactNo");
