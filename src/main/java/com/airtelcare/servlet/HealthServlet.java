@@ -27,6 +27,6 @@ public class HealthServlet extends HttpServlet {
 
 		resp.setContentType("text/html");
 		PrintWriter out = resp.getWriter();
-		 out.println("Application is UP");
+		 out.println("Application is UP : "+LocalDateTime.now());
 	}
 }
