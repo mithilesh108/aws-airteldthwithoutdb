@@ -27,6 +27,6 @@ public class RequestServlet extends HttpServlet {
 
 		resp.setContentType("text/html");
 		PrintWriter out = resp.getWriter();
-		 out.println("Application request recived");
+		 out.println("Application request recived: "+LocalDateTime.now());
 	}
 }
